@@ -1,9 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion as Motion } from "framer-motion";
+import toast, { Toaster } from "react-hot-toast";
 
 export default function BookAppointment() {
+  const [formData, setFormData] = useState({
+    name: "",
+    phone: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { name, phone, message } = formData;
+
+    // Validation
+    if (!name || !phone || phone.length < 10) {
+      toast.error("⚠️ Please fill all required fields (Name & Valid Phone Number)!");
+      return;
+    }
+
+    // WhatsApp message (formatted)
+    const text = `*🦷 New Appointment Request*%0A%0A*👤 Name:* ${name}%0A*📞 Phone:* ${phone}%0A*💬 Message:* ${message || "N/A"}%0A%0A*📍 Sent from Realtooth Dental Clinic Website*`;
+
+    // Replace with your clinic’s WhatsApp number (with country code, no +)
+    const phoneNumber = "916206008078";
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
+
+    // Success toast
+    toast.success("✅ Opening WhatsApp...");
+
+    // Open WhatsApp
+    window.open(whatsappURL, "_blank");
+
+    // Reset form fields
+    setFormData({ name: "", phone: "", message: "" });
+  };
   return (
-    <section className="bg-[#8CC63F] text-white py-16 px-6 md:px-16 rounded-2xl relative overflow-hidden">
+    <section id="booking-form" className="bg-[#8CC63F] text-white py-16 px-6 md:px-16 rounded-2xl relative overflow-hidden">
       {/* Animated Title */}
   <Motion.h2
         initial={{ opacity: 0, y: -40 }}
@@ -22,6 +62,7 @@ export default function BookAppointment() {
         transition={{ duration: 1 }}
         viewport={{ once: true }}
         className="max-w-3xl mx-auto space-y-5"
+        onSubmit={handleSubmit}
       >
         {/* Name */}
         <div>
@@ -30,6 +71,9 @@ export default function BookAppointment() {
           </label>
           <input
             type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
             style={{ backgroundColor: "white" }}
             placeholder="Name"
             className="w-full px-4 py-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-orange-400"
@@ -42,8 +86,11 @@ export default function BookAppointment() {
             Phone <span className="text-red-500">*</span>
           </label>
           <input
-            type="text"
-             style={{ backgroundColor: "white" }}
+            type="tel"
+            name="phone"
+            value={formData.phone}
+            onChange={handleChange}
+            style={{ backgroundColor: "white" }}
             placeholder="Phone No."
             className="w-full px-4 py-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-orange-400"
           />
@@ -55,8 +102,11 @@ export default function BookAppointment() {
             Message
           </label>
           <textarea
+            name="message"
             rows="3"
-             style={{ backgroundColor: "white" }}
+            value={formData.message}
+            onChange={handleChange}
+            style={{ backgroundColor: "white" }}
             placeholder="Any Message"
             className="w-full px-4 py-3 rounded-lg text-black focus:outline-none focus:ring-2 focus:ring-orange-400"
           ></textarea>
@@ -72,6 +122,9 @@ export default function BookAppointment() {
           BOOK NOW
         </Motion.button>
       </Motion.form>
+
+      {/* Toast container for feedback */}
+      <Toaster position="top-center" reverseOrder={false} />
 
       {/* Address Section */}
   <Motion.div

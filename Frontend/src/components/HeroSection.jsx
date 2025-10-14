@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import heroImage from "../assets/front.png";
+import emojiImage from "../assets/realtooth.png";
 import { motion as Motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
+
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -64,9 +66,31 @@ const HeroSection = () => {
         <p className="text-green-600 text-xl font-medium mb-6">
           Regain Your Smile
         </p>
-        <button className="bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-green-700 transition">
+        <button className="bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-green-700 transition"
+        onClick={() => document.getElementById("booking-form").scrollIntoView({ behavior: "smooth" })}
+        >
           BOOK APPOINTMENT
         </button>
+
+
+
+<img
+  src={emojiImage}
+  alt="Realtooth Logo"
+  className="absolute top-0 right-8 w-24 md:w-32 z-20 animate-float hidden md:block"
+/>
+
+
+<style jsx>{`
+  @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0); }
+  }
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+`}</style>
 
 
         <img
@@ -78,9 +102,11 @@ const HeroSection = () => {
 
       {/* Right booking form */}
       <div className="bg-green-200 p-8 rounded-2xl mt-8 md:mt-0 w-full max-w-md shadow-md">
-        <h3 className="text-2xl font-semibold text-center mb-6">
+        <button
+          className="text-2xl font-semibold text-center mb-6"
+        >
           Book Appointment Now!
-        </h3>
+        </button>
         <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label className="block text-sm font-semibold mb-1">Name *</label>
