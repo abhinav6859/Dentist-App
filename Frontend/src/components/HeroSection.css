@@ -1,0 +1,159 @@
+/* ===== Hero Section Professional Animations ===== */
+
+section {
+  overflow: hidden;
+  position: relative;
+}
+
+/* Fade + Slide-in Animations */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Floating Image Animation */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* Shine effect on buttons */
+@keyframes shine {
+  0% { background-position: -200px 0; }
+  100% { background-position: 200px 0; }
+}
+
+/* ===== Apply Animations to Elements ===== */
+
+/* Left Text Area */
+section > div:first-child {
+  animation: fadeInLeft 1s ease-out both;
+}
+
+/* Smile Image Float */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Dentist Hero Image */
+section img[alt="Hero Dentist"] {
+  animation: fadeInUp 1s ease-out both;
+  animation-delay: 0.3s;
+  border-radius: 24px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+section img[alt="Hero Dentist"]:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* Booking Form */
+section > div:last-child {
+  animation: fadeInRight 1s ease-out both;
+  animation-delay: 0.2s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section > div:last-child:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(34, 139, 34, 0.3);
+}
+
+/* Inputs */
+section input,
+section textarea {
+  transition: all 0.25s ease;
+}
+
+section input:focus,
+section textarea:focus {
+  border-color: #22c55e; /* Tailwind green-500 */
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.3);
+  transform: scale(1.02);
+}
+
+/* Buttons */
+section button.bg-green-600,
+section button.bg-orange-500 {
+  position: relative;
+  overflow: hidden;
+  background-size: 200%;
+  background-image: linear-gradient(
+    120deg,
+    rgba(34,197,94,1) 0%,
+    rgba(16,185,129,1) 50%,
+    rgba(34,197,94,1) 100%
+  );
+  transition: all 0.4s ease;
+}
+
+section button.bg-orange-500 {
+  background-image: linear-gradient(
+    120deg,
+    #f97316 0%,
+    #fb923c 50%,
+    #f97316 100%
+  );
+}
+
+section button.bg-green-600:hover,
+section button.bg-orange-500:hover {
+  background-position: right center;
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Title Text Enhancements */
+h1, h2 {
+  animation: fadeInUp 1s ease forwards;
+}
+
+h2 {
+  animation-delay: 0.15s;
+}
+
+p.text-green-600 {
+  animation: fadeInUp 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Toast override (optional polish) */
+.Toastify__toast {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}

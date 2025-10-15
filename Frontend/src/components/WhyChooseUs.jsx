@@ -38,7 +38,7 @@ const WhyChooseUs = () => {
   return (
     <section className="py-16 bg-white text-center ">
   <h2 className="text-3xl font-bold text-gray-800 mb-10">Why Choose Us</h2>
-  <h1 className="text-4xl font-bold text-green-800 mb-10">Why To Choose Real Tooth</h1>
+  <h1 className="text-4xl font-bold text-green-800 mb-10">Why To Choose Smile centre </h1>
 
   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
     {features.map((item, index) => (

@@ -27,10 +27,10 @@ export default function BookAppointment() {
     }
 
     // WhatsApp message (formatted)
-    const text = `*🦷 New Appointment Request*%0A%0A*👤 Name:* ${name}%0A*📞 Phone:* ${phone}%0A*💬 Message:* ${message || "N/A"}%0A%0A*📍 Sent from Realtooth Dental Clinic Website*`;
+    const text = `*🦷 New Appointment Request*%0A%0A*👤 Name:* ${name}%0A*📞 Phone:* ${phone}%0A*💬 Message:* ${message || "N/A"}%0A%0A*📍 Sent from Smile centre Website*`;
 
     // Replace with your clinic’s WhatsApp number (with country code, no +)
-    const phoneNumber = "916206008078";
+    const phoneNumber = "917985954359";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
 
     // Success toast

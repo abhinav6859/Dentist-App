@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import heroImage from "../assets/front.png";
-import emojiImage from "../assets/realtooth.png";
+import emojiImage from "../assets/smile1.jpg";
 import { motion as Motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
-
+import "./HeroSection.css";
 
 const HeroSection = () => {
   const [formData, setFormData] = useState({
@@ -33,7 +33,7 @@ const HeroSection = () => {
     const text = `*🦷 New Appointment Request*%0A%0A*👤 Name:* ${name}%0A*📞 Phone:* ${phone}%0A*💬 Message:* ${message || "N/A"}%0A%0A*📍 Sent from Realtooth Dental Clinic Website*`;
 
     // Replace with your clinic’s WhatsApp number (with country code, no +)
-    const phoneNumber = "916206008078";
+    const phoneNumber = "917985954359";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
 
     // Success toast
@@ -76,8 +76,8 @@ const HeroSection = () => {
 
 <img
   src={emojiImage}
-  alt="Realtooth Logo"
-  className="absolute top-0 right-8 w-24 md:w-32 z-20 animate-float hidden md:block"
+  alt="Smile Centre Logo"
+  className="absolute bottom-32px right-8 w-24 md:w-32 z-20 animate-float hidden md:block"
 />
 
 

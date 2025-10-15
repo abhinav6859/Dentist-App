@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaWhatsapp, FaPhoneAlt, FaUser } from "react-icons/fa";
 
 const FloatingButtons = () => {
-  const phoneNumber = "+919999999999"; // replace with your actual number
+  const phoneNumber = "+917985954359"; 
   const whatsappLink = `https://wa.me/${phoneNumber.replace("+", "")}`;
   const [showLogin, setShowLogin] = useState(false);
 
