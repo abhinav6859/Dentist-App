@@ -1,5 +1,6 @@
 
 import React, { useState } from "react";
+import ClinicLocation from "./Location.jsx";
 import { motion as Motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
 import { Phone, MapPin, Send } from "lucide-react";
@@ -136,7 +137,7 @@ export default function BookAppointment() {
         viewport={{ once: true }}
         className="mt-14 bg-white/10 backdrop-blur-md rounded-2xl py-8 px-6 text-center shadow-inner"
       >
-        <h3 className="text-2xl font-semibold mb-4 flex items-center justify-center gap-2">
+        {/* <h3 className="text-2xl font-semibold mb-4 flex items-center justify-center gap-2">
           <MapPin className="text-yellow-300" /> Our Lucknow Branches
         </h3>
 
@@ -150,7 +151,8 @@ export default function BookAppointment() {
         <p className="mt-5 text-lg font-bold flex items-center justify-center gap-2">
           <Phone className="text-yellow-300" /> CALL NOW:
           <span className="text-yellow-300">+91-79859 54359</span>
-        </p>
+        </p> */}
+        <ClinicLocation />
       </Motion.div>
     </section>
   );

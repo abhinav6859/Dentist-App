@@ -141,7 +141,8 @@ const HeroSection = () => {
             From kids to grandparents — we care for everyone’s smile with gentle,
             expert dental care in a friendly, stress-free environment.
           </p>
-
+          <p className="text-blue-700 text-lg mb-8">Doctor: Dr. S. Bhardwaj, PhD (Research Scholar), MDS (Prosthodontics & Implantology), BDS
+          </p>
           <Motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
