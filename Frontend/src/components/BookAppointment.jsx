@@ -137,21 +137,7 @@ export default function BookAppointment() {
         viewport={{ once: true }}
         className="mt-14 bg-white/10 backdrop-blur-md rounded-2xl py-8 px-6 text-center shadow-inner"
       >
-        {/* <h3 className="text-2xl font-semibold mb-4 flex items-center justify-center gap-2">
-          <MapPin className="text-yellow-300" /> Our Lucknow Branches
-        </h3>
-
-        <div className="space-y-3 text-white/90">
-          <p><strong>Mahanagar:</strong> C-117 H Sector A, Mandir Marg — <span className="text-yellow-200 font-semibold">+91-8081151128</span></p>
-          <p><strong>Hazratganj:</strong> Greenwood Apartment, Gokhale Marg — <span className="text-yellow-200 font-semibold">+91-8081151138</span></p>
-          <p><strong>Gomti Nagar:</strong> Omaxe Heights, Vibhuti Khand — <span className="text-yellow-200 font-semibold">+91-8081151139</span></p>
-          <p><strong>Aliganj:</strong> Star Tower Building, Sector H — <span className="text-yellow-200 font-semibold">+91-8081151129</span></p>
-        </div>
-
-        <p className="mt-5 text-lg font-bold flex items-center justify-center gap-2">
-          <Phone className="text-yellow-300" /> CALL NOW:
-          <span className="text-yellow-300">+91-79859 54359</span>
-        </p> */}
+       
         <ClinicLocation />
       </Motion.div>
     </section>

@@ -45,13 +45,22 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-tr from-teal-50 via-white to-green-100 py-16 px-8 md:px-20">
       <Toaster position="top-center" reverseOrder={false} />
-
+  <Motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+              onClick={() => document.getElementById("location").scrollIntoView({ behavior: "smooth" })}
+           className="rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 hover:from-blue-600 hover:via-blue-700 hover:to-cyan-600 active:scale-95 transition-all duration-300
+            text-white font-semibold px-6 py-3 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
+           Check Location 
+          </Motion.button>
       {/* Animated background blobs */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-green-300 opacity-30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200 opacity-30 rounded-full blur-3xl animate-bounce-slow"></div>
 
       <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* LEFT SIDE: FORM CARD */}
+        
         <Motion.div
          
           initial={{ opacity: 0, x: -60 }}
@@ -117,7 +126,6 @@ const HeroSection = () => {
             </Motion.button>
           </form>
         </Motion.div>
-
         {/* RIGHT SIDE: HERO CONTENT */}
         <Motion.div
           initial={{ opacity: 0, x: 60 }}
@@ -151,6 +159,7 @@ const HeroSection = () => {
           >
             Get Appointment
           </Motion.button>
+          
 
           <Motion.img
             src={heroImage}

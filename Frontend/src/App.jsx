@@ -8,6 +8,7 @@ import Footer from "./components/Footer";
 import FAQSection from "./components/FAQSection";
 import ClinicBranches from "./components/ClinicBranches";
 import BookAppointment from "./components/BookAppointment";
+import PatientTestimonials from "./components/PatientTestimonials";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <HeroSection />
       <TreatmentsSection />
       <TestimonialsSection />
+      <PatientTestimonials /> 
       <ClinicBranches />
       <WhyChooseUs />
       <FAQSection />
