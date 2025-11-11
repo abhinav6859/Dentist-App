@@ -4,33 +4,33 @@ import { FaTooth, FaSmile, FaUserMd, FaClock, FaHeartbeat, FaCheckCircle } from 
 const features = [
   {
     icon: <FaUserMd size={30} />,
-    title: "Experienced Doctors",
-    desc: "Our dentists are highly skilled and compassionate professionals.",
+    title: "Friendly & Skilled Dentists",
+    desc: "Our expert dentists treat you like family — with care, patience, and a big smile!",
   },
   {
     icon: <FaSmile size={30} />,
-    title: "Patient Comfort",
-    desc: "We ensure every visit is relaxing and stress-free for you.",
+    title: "Relaxed & Happy Visits",
+    desc: "We make sure every visit feels calm, comfortable, and worry-free for kids and adults alike.",
   },
   {
     icon: <FaTooth size={30} />,
-    title: "Advanced Equipment",
-    desc: "State-of-the-art tools for precise and safe treatments.",
+    title: "Modern Dental Technology",
+    desc: "From digital X-rays to painless treatments — we use the latest tools for the best results.",
   },
   {
     icon: <FaClock size={30} />,
-    title: "Flexible Timing",
-    desc: "We offer convenient appointment schedules that suit your day.",
+    title: "Easy & Flexible Appointments",
+    desc: "Morning or evening — book a time that fits your family’s busy schedule.",
   },
   {
     icon: <FaHeartbeat size={30} />,
-    title: "Comprehensive Care",
-    desc: "All your dental needs covered in one place.",
+    title: "Complete Family Care",
+    desc: "From your child’s first tooth to senior dental care — we’ve got every smile covered.",
   },
   {
     icon: <FaCheckCircle size={30} />,
-    title: "Trusted Service",
-    desc: "Hundreds of patients trust us with their smiles.",
+    title: "Trusted by Happy Smiles",
+    desc: "Thousands of smiling patients across Lucknow trust us with their family’s dental care.",
   },
 ];
 

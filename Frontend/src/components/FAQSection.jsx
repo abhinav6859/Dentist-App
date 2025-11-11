@@ -5,22 +5,42 @@ const faqs = [
   {
     question: "How often should I visit the dentist?",
     answer:
-      "It’s best to visit your dentist every 6 months for a check-up and cleaning to maintain optimal oral health.",
+      "Visiting every 6 months helps keep your teeth clean and healthy. Regular check-ups also prevent small issues from turning into big ones!",
   },
   {
     question: "Do dental treatments hurt?",
     answer:
-      "Most treatments are pain-free thanks to modern anesthesia and gentle techniques.",
+      "Don’t worry — most treatments are completely painless! We use gentle techniques and make sure you’re comfortable every step of the way.",
   },
   {
     question: "Do you offer teeth whitening?",
     answer:
-      "Yes, we offer professional whitening treatments that are safe and long-lasting.",
+      "Yes! Our safe and professional whitening treatments can make your smile brighter in no time — perfect for special occasions or everyday confidence.",
   },
   {
-    question: "What should I do in case of a dental emergency?",
+    question: "What should I do if I have a toothache or emergency?",
     answer:
-      "Call us immediately! We provide quick appointments for urgent dental issues.",
+      "If you have sudden pain, a broken tooth, or bleeding gums, call us right away. We’ll do our best to get you in as soon as possible.",
+  },
+  {
+    question: "Do you treat children?",
+    answer:
+      "Of course! We love caring for kids and make every visit fun and fear-free. Our friendly team helps children build good dental habits early on.",
+  },
+  {
+    question: "Can you help with missing or damaged teeth?",
+    answer:
+      "Yes! We offer options like dental implants, crowns, and bridges to restore your smile and make eating comfortable again.",
+  },
+  {
+    question: "Do you offer braces or aligners?",
+    answer:
+      "Yes, we provide both traditional braces and clear aligners to help straighten teeth comfortably and effectively for kids, teens, and adults.",
+  },
+  {
+    question: "How can I keep my teeth healthy at home?",
+    answer:
+      "Brush twice a day, floss daily, and avoid too many sugary snacks. And don’t forget to visit us every 6 months for a quick check-up!",
   },
 ];
 

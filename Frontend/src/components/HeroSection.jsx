@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import heroImage from "../assets/front.png";
 import emojiImage from "../assets/smile1.jpg";
@@ -23,131 +24,159 @@ const HeroSection = () => {
     e.preventDefault();
     const { name, phone, message } = formData;
 
-    // Validation
     if (!name || !phone || phone.length < 10) {
       toast.error("⚠️ Please fill all required fields (Name & Valid Phone Number)!");
       return;
     }
 
-    // WhatsApp message (formatted)
-    const text = `*🦷 New Appointment Request*%0A%0A*👤 Name:* ${name}%0A*📞 Phone:* ${phone}%0A*💬 Message:* ${message || "N/A"}%0A%0A*📍 Sent from Realtooth Dental Clinic Website*`;
+    const text = `*🦷 New Appointment Request*%0A%0A*👤 Name:* ${name}%0A*📞 Phone:* ${phone}%0A*💬 Message:* ${
+      message || "N/A"
+    }%0A%0A*📍 Sent from Realtooth Dental Clinic Website*`;
 
-    // Replace with your clinic’s WhatsApp number (with country code, no +)
     const phoneNumber = "917985954359";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${text}`;
 
-    // Success toast
     toast.success("✅ Opening WhatsApp...");
-
-    // Open WhatsApp
     window.open(whatsappURL, "_blank");
 
-    // Reset form fields
-    setFormData({
-      name: "",
-      phone: "",
-      message: "",
-    });
+    setFormData({ name: "", phone: "", message: "" });
   };
 
   return (
-    <section className="bg-white flex flex-col md:flex-row items-center justify-between p-8 md:p-16 relative">
-      {/* Toast container */}
+    <section className="relative overflow-hidden bg-gradient-to-tr from-teal-50 via-white to-green-100 py-16 px-8 md:px-20">
       <Toaster position="top-center" reverseOrder={false} />
 
-      {/* Left content */}
-      <div className="max-w-xl relative">
-        <h1 className="text-green-600 text-3xl font-semibold mb-2">
-          Lucknow’s #No.1 Dental Clinic
-        </h1>
-        <h2 className="text-4xl md:text-5xl font-bold text-blue-800 leading-tight mb-4">
-          Dental Clinic In Lucknow Near You
-        </h2>
-        <p className="text-green-600 text-xl font-medium mb-6">
-          Regain Your Smile
-        </p>
-        <button className="bg-green-600 text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-green-700 transition"
-        onClick={() => document.getElementById("booking-form").scrollIntoView({ behavior: "smooth" })}
+      {/* Animated background blobs */}
+      <div className="absolute top-0 left-0 w-80 h-80 bg-green-300 opacity-30 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200 opacity-30 rounded-full blur-3xl animate-bounce-slow"></div>
+
+      <div className="relative z-10 flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+        {/* LEFT SIDE: FORM CARD */}
+        <Motion.div
+         
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 w-full max-w-md border-t-8 border-green-500"
         >
-          BOOK APPOINTMENT
-        </button>
+          <h3 className="text-3xl font-bold text-green-700 mb-6 text-center">
+            Book Your Appointment
+          </h3>
 
+          <form onSubmit={handleSubmit} className="space-y-5">
+            <div>
+              <label className="block text-sm font-semibold mb-1 text-gray-700">
+                Name <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 outline-none transition"
+              />
+            </div>
 
+            <div>
+              <label className="block text-sm font-semibold mb-1 text-gray-700">
+                Phone <span className="text-red-500">*</span>
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 outline-none transition"
+              />
+            </div>
 
-<img
-  src={emojiImage}
-  alt="Smile Centre Logo"
-  className="absolute bottom-32px right-8 w-24 md:w-32 z-20 animate-float hidden md:block"
-/>
+            <div>
+              <label className="block text-sm font-semibold mb-1 text-gray-700">
+                Message
+              </label>
+              <textarea
+                name="message"
+                placeholder="Any Message (optional)"
+                value={formData.message}
+                onChange={handleChange}
+                rows="3"
+                className="w-full p-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-green-500 outline-none transition resize-none"
+              ></textarea>
+            </div>
 
+            <Motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.97 }}
+              type="submit"
+              className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-xl shadow-md transition"
+            >
+              BOOK NOW
+            </Motion.button>
+          </form>
+        </Motion.div>
 
-<style jsx>{`
-  @keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
-  }
-  .animate-float {
-    animation: float 3s ease-in-out infinite;
-  }
-`}</style>
-
-
-        <img
-          src={heroImage}
-          alt="Hero Dentist"
-          className="rounded-4xl shadow-lg w-80 md:w-[400px] z-10 mt-10 md:mt-0 relative"
-        />
-      </div>
-
-      {/* Right booking form */}
-      <div className="bg-green-200 p-8 rounded-2xl mt-8 md:mt-0 w-full max-w-md shadow-md">
-        <button
-          className="text-2xl font-semibold text-center mb-6"
+        {/* RIGHT SIDE: HERO CONTENT */}
+        <Motion.div
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center text-center md:text-left max-w-xl"
         >
-          Book Appointment Now!
-        </button>
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <div>
-            <label className="block text-sm font-semibold mb-1">Name *</label>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full p-3 rounded-md border border-gray-300"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-semibold mb-1">Phone *</label>
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Phone No."
-              value={formData.phone}
-              onChange={handleChange}
-              className="w-full p-3 rounded-md border border-gray-300"
-            />
-          </div>
-          <div>
-            <label className="block text-sm font-semibold mb-1">Message</label>
-            <textarea
-              name="message"
-              placeholder="Any Message"
-              value={formData.message}
-              onChange={handleChange}
-              className="w-full p-3 rounded-md border border-gray-300"
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="w-full bg-orange-500 text-white font-semibold py-3 rounded-md hover:bg-orange-600 transition"
+          <Motion.img
+            src={emojiImage}
+            alt="Smiling Emoji"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            className="w-20 mb-6"
+          />
+
+          <h1 className="text-5xl md:text-6xl font-extrabold text-green-700 leading-tight mb-4">
+            Bright Smiles for the Whole Family
+          </h1>
+          <p className="text-gray-600 text-lg mb-6">
+            From kids to grandparents — we care for everyone’s smile with gentle,
+            expert dental care in a friendly, stress-free environment.
+          </p>
+
+          <Motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+              onClick={() => document.getElementById("booking-form").scrollIntoView({ behavior: "smooth" })}
+            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition"
           >
-            BOOK NOW
-          </button>
-        </form>
+            Get Appointment
+          </Motion.button>
+
+          <Motion.img
+            src={heroImage}
+            alt="Dentist Hero"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            viewport={{ once: true }}
+            className="rounded-3xl shadow-2xl mt-10 w-80 md:w-[400px]"
+          />
+        </Motion.div>
       </div>
+
+      {/* Custom animation for slower bounce */}
+      <style jsx>{`
+        @keyframes bounce-slow {
+          0%, 100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+        .animate-bounce-slow {
+          animation: bounce-slow 5s infinite ease-in-out;
+        }
+      `}</style>
     </section>
   );
 };
