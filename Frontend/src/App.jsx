@@ -9,12 +9,14 @@ import FAQSection from "./components/FAQSection";
 import ClinicBranches from "./components/ClinicBranches";
 import BookAppointment from "./components/BookAppointment";
 import PatientTestimonials from "./components/PatientTestimonials";
+import Doctors from "./components/doctors";
 
 function App() {
   return (
     <div className="font-sans">
       <HeroSection />
       <TreatmentsSection />
+      <Doctors />
       <TestimonialsSection />
       <PatientTestimonials /> 
       <ClinicBranches />

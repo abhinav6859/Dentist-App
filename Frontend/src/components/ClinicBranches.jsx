@@ -1,29 +1,13 @@
 import React from "react";
 import img1 from "../assets/1.png";
-import img2 from "../assets/2.png";
-import img3 from "../assets/3.png";
-import img4 from "../assets/4.png";
+
 const clinics = [
   {
-    name: "Hazratganj",
-    address: "Greenwood Apartment, Gokhale Marg",
+    name: "Lucknow Clinic",
+    address: "Nishith Plaza, Engineering College Chauraha",
     image: img1,
   },
-  {
-    name: "Gomti Nagar",
-    address: "Omaxe Heights, VijaiPur Colony",
-    image: img2,
-  },
-  {
-    name: "Aliganj",
-    address: "Star Tower Building Opp Kendriya Bhawan, Sector-H",
-    image: img3,
-  },
-  {
-    name: "Mahanagar",
-    address: "C-117 H Sector A, Mandir Marg Mahanagar",
-    image: img4,
-  },
+ 
 ];
 
 export default function ClinicBranches() {
@@ -33,7 +17,7 @@ export default function ClinicBranches() {
         Find Your Nearest Clinic Branch
       </h2>
       <p className="mt-2 text-lg font-semibold text-gray-800">
-        4 Convenient Locations In Lucknow{" "}
+        first Convenient Locations In Lucknow{" "}
         <span className="text-green-600">One Trusted Name</span>
       </p>
 

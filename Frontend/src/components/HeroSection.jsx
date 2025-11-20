@@ -45,15 +45,7 @@ const HeroSection = () => {
   return (
     <section className="relative overflow-hidden bg-gradient-to-tr from-teal-50 via-white to-green-100 py-16 px-8 md:px-20">
       <Toaster position="top-center" reverseOrder={false} />
-  <Motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.97 }}
-              onClick={() => document.getElementById("location").scrollIntoView({ behavior: "smooth" })}
-           className="rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 hover:from-blue-600 hover:via-blue-700 hover:to-cyan-600 active:scale-95 transition-all duration-300
-            text-white font-semibold px-6 py-3 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-300"
-          >
-           Check Location 
-          </Motion.button>
+
       {/* Animated background blobs */}
       <div className="absolute top-0 left-0 w-80 h-80 bg-green-300 opacity-30 rounded-full blur-3xl animate-pulse"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-teal-200 opacity-30 rounded-full blur-3xl animate-bounce-slow"></div>
@@ -69,6 +61,7 @@ const HeroSection = () => {
           viewport={{ once: true }}
           className="bg-white rounded-3xl shadow-2xl p-8 md:p-10 w-full max-w-md border-t-8 border-green-500"
         >
+          
           <h3 className="text-3xl font-bold text-green-700 mb-6 text-center">
             Book Your Appointment
           </h3>
@@ -141,7 +134,15 @@ const HeroSection = () => {
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
             className="w-20 mb-6"
           />
-
+  <Motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.97 }}
+              onClick={() => document.getElementById("location").scrollIntoView({ behavior: "smooth" })}
+           className="rounded-full bg-gradient-to-r from-blue-500 via-blue-600 to-cyan-500 hover:from-blue-600 hover:via-blue-700 hover:to-cyan-600 active:scale-95 transition-all duration-300
+            text-white font-semibold px-6 py-3 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-blue-300"
+          >
+           Check Location 
+          </Motion.button>
           <h1 className="text-5xl md:text-6xl font-extrabold text-green-700 leading-tight mb-4">
             Bright Smiles for the Whole Family
           </h1>
@@ -155,7 +156,7 @@ const HeroSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.97 }}
               onClick={() => document.getElementById("booking-form").scrollIntoView({ behavior: "smooth" })}
-            className="bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition"
+            className="bg-blue-500 hover:bg-blue-800 text-white font-semibold py-3 px-8 rounded-xl shadow-lg transition"
           >
             Get Appointment
           </Motion.button>
